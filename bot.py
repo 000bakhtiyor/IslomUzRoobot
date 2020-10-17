@@ -9,16 +9,16 @@ def vaqt():
     URL = requests.get("https://islom.uz/lotin")
     SOUP = BeautifulSoup(URL.content,"html.parser")
 
-    UZBDA = SOUP.find("div",class_="date_time")
+    qidrish = SOUP.find("div",class_="date_time")
 
-    return UZBDA.text
+    return qidrish.text
 
 def namoz_vaqtlari():
    URL = requests.get("https://islom.uz/lotin")
    SOUP = BeautifulSoup(URL.content,"html.parser")
 
-   UZBDA = SOUP.find("div",class_="in_header_p")
-   vaqt = UZBDA.text.split('\n')
+   qidrish = SOUP.find("div",class_="in_header_p")
+   vaqt = qidrish.text.split('\n')
 
    title = vaqt[1]
    vaqt_tong = "  :  ".join(vaqt[6:8])
